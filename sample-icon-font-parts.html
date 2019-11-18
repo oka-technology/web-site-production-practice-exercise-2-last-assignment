@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Font Awesome sample</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <p class="menu"><span class="fa fa-bars"></span><span>Menu</span></p>
+    <ul class="icons">
+        <li><a href="#" class="fa fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="fa fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="fa fa-instagram"><span class="label">Instagram</span></a></li>
+    </ul>
+
+    <a href="#" class="scrolly prev"><span class="fa fa-chevron-up"></span></a>
+    <a href="#" class="scrolly next disabled"><span class="fa fa-chevron-down"></span></a>
+
+    <style>
+        .fa>.label {
+            display: none;
+        }
+
+        .icons li {
+            list-style: none;
+        }
+
+        a.fa {
+            color: #666;
+            font-size: 3em;
+            text-decoration: none;
+        }
+
+        a.fa:hover {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .menu span {
+            display: inline-block;
+            font-size: 3em;
+            margin-right: 0.3em;
+        }
+
+        .scrolly {
+            border: 1px solid rgba(144, 144, 144, 0.25);
+            display: block;
+            height: 2em;
+            line-height: 2em;
+            text-align: center;
+            text-decoration: none;
+            width: 2em;
+        }
+
+        .scrolly:hover {
+            background: #ccc;
+        }
+    </style>
+</body>
+
+</html>
