@@ -50,8 +50,12 @@ export default (): Configuration => ({
         ],
       },
       {
-        test: /\.jpg$|\.png$|\.eot$|\.svg$|\.ttf$|\.woff$|\.woff2$|\.otf$/i,
-        use: ['file-loader'],
+        test: /\.jpg$|\.png$/i,
+        use: [{ loader: 'file-loader', options: { outputPath: 'img' } }],
+      },
+      {
+        test: /\.eot$|\.svg$|\.ttf$|\.woff$|\.woff2$|\.otf$/i,
+        use: [{ loader: 'file-loader', options: { outputPath: 'fonts' } }],
       },
     ],
   },
