@@ -5,6 +5,7 @@
     background-size: cover;
     height: 63rem + ($topPageMainSectionHeight / 2);
   }
+
   &__mainSectionWrapper {
     height: calc(
       #{$topPageMainSectionHeight} + 100vw * #{$tanOfTopPageMainSectionInclination}

@@ -1,6 +1,7 @@
 .childPage {
+  margin: 0 auto;
   padding: 6rem 0;
-  width: 96rem;
+  width: $childPageWidth;
 
   &__mainImage {
     background-position: center;
@@ -10,6 +11,54 @@
 
     &_bmw {
       background-image: url(../images/pic1.jpg);
+    }
+
+    &_emblem {
+      background-image: url(../images/pic2.jpg);
+    }
+
+    &_features {
+      background-image: url(../images/pic3.jpg);
+    }
+
+    &_motorcycle {
+      background-image: url(../images/pic4.jpg);
+    }
+
+    &_motorSports {
+      background-image: url(../images/pic5.jpg);
+    }
+
+    &_businessConditions {
+      background-image: url(../images/pic6.jpg);
+    }
+  }
+
+  &__title {
+    @extend .topPageSection__description__title;
+
+    margin-top: 5rem;
+  }
+
+  &__englishTitle {
+    @extend .topPageSection__description__englishTitle;
+
+    color: $gray;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    &__paragraphBlock {
+      font-size: 1.6rem;
+      line-height: 2.9rem;
+      width: ($childPageWidth - 4rem) / 2;
+
+      > p:not(:first-child) {
+        margin-top: 2.9rem;
+      }
     }
   }
 }
