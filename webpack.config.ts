@@ -1,6 +1,7 @@
 import path from 'path';
 import { Configuration } from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const __DEV__: boolean = process.env.NODE_ENV !== 'production';
 
@@ -17,6 +18,11 @@ export default (): Configuration => ({
   resolve: {
     extensions: ['.js', '.ts'],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -26,17 +32,7 @@ export default (): Configuration => ({
       },
       {
         test: /\.s?[ac]ss$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'style.css',
-            },
-          },
-          'extract-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.html$/i,
