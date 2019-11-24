@@ -6,149 +6,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>BMW Fan!!!!!</title>
 </head>
 
 <body>
   <header class="header">
     <p class="header__pageName">BMW Fan!!!!!</p>
-    <div class="menuButton">
-      <div class="menuButton__hamburgerButton">
-        <span class="menuButton__hamburgerButton__line"></span>
-        <span class="menuButton__hamburgerButton__line"></span>
-        <span class="menuButton__hamburgerButton__line"></span>
+    <div class="menu">
+      <div class="menu__button">
+        <div class="hamburgerButton">
+          <span class="hamburgerButton__line"></span>
+          <span class="hamburgerButton__line"></span>
+          <span class="hamburgerButton__line"></span>
+        </div>
+        <p class="menu__button__text">Menu</p>
       </div>
-      <p class="menuButton__text">Menu</p>
-      <ul class="menuButton__list">
-        <li class="menuButton__list__item"><a href="">Home</a></li>
-        <li class="menuButton__list__item"><a href="">BMW</a></li>
-        <li class="menuButton__list__item"><a href="">エンブレムの由来</a></li>
-        <li class="menuButton__list__item"><a href="">製品の特徴</a></li>
-        <li class="menuButton__list__item"><a href="">二輪車</a></li>
-        <li class="menuButton__list__item"><a href="">モータースポーツ</a></li>
-        <li class="menuButton__list__item"><a href="">経営状況</a></li>
+      <ul class="menuList">
+        <li class="menuList__item"><a class="menuList__item__anchor" href="index.html">Home</a></li>
+        <li class="menuList__item"><a class="menuList__item__anchor" href="bmw.html">BMW</a></li>
+        <li class="menuList__item"><a class="menuList__item__anchor" href="emblem.html">エンブレムの由来</a></li>
+        <li class="menuList__item"><a class="menuList__item__anchor" href="features.html">製品の特徴</a></li>
+        <li class="menuList__item"><a class="menuList__item__anchor" href="motorcycle.html">二輪車</a></li>
+        <li class="menuList__item"><a class="menuList__item__anchor" href="motor-sports.html">モータースポーツ</a></li>
+        <li class="menuList__item"><a class="menuList__item__anchor" href="business-conditions.html">経営状況</a></li>
       </ul>
     </div>
   </header>
   <main class="main">
-    <div class="main__mainVisual"></div>
-    <section class="topPageSection topPageSection_main">
-      <h1 class="topPageSection__title">Freude am Fahren</h1>
-      <p class="topPageSection__text">駆けぬける歓び</p>
-      <a href="#" class="topPageSection__button">Continue</a>
-    </section>
+    <div class="main__mainVisual parallax"></div>
+    <div class="main__mainSectionWrapper">
+      <section class="topPageSection topPageSection_main">
+        <div class="topPageSection__description">
+          <h1 class="topPageSection__description__title">Freude am Fahren</h1>
+          <p class="topPageSection__description__main">駆けぬける歓び</p>
+          <a href="#" class="topPageSection__description__button">Continue</a>
+        </div>
+      </section>
+    </div>
     <section class="topPageSection topPageSection_bmw">
       <div class="topPageSection__description">
         <h2 class="topPageSection__description__title">BMW</h2>
-        <p class="topPageSection__description__EnglishTitle">Bayerische Motoren WerkeAG</p>
+        <p class="topPageSection__description__englishTitle">Bayerische Motoren WerkeAG</p>
         <p class="topPageSection__description__main">BMW（ビーエムダブリュー、ドイツ語: Bayerische Motoren
           WerkeAG、バイエルン発動機製造株式会社）は、ドイツのバイエルン州ミュンヘンを拠点とする自動車および自動二輪車、エンジンメーカーである。
         </p>
         <a class="topPageSection__description__button" href="readMore.html">Read More</a>
       </div>
     </section>
-    <section class="topPageSection topPageSection_emblem">
-      <div class="topPageSection__parallaxImg"></div>
+    <section class="topPageSection topPageSection_emblem topPageSection_withImg">
+      <div class="topPageSection__img parallax"></div>
       <div class="topPageSection__description">
         <h2 class="topPageSection__description__title">エンブレムの由来</h2>
-        <p class="topPageSection__description__EnglishTitle">Origin of the emblem</p>
+        <p class="topPageSection__description__englishTitle">Origin of the emblem</p>
         <div class="topPageSection__description__main">
           1917年10月5日にBMWのロゴマークが商標登録された。1929年の広報広告により、現在の黒く縁取った円の中央を十字によって4等分し、 点対称に青と白に塗り分けたデザインである。</div>
         <a href="" class="topPageSection__description__button">Read More</a>
       </div>
       <div class="topPageSection__scrollButtons">
-        <a href="#" class="scrolly prev">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly prev">
           <span class="fa fa-chevron-up"></span>
         </a>
-        <a href="#" class="scrolly next">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly next">
           <span class="fa fa-chevron-down"></span>
         </a>
       </div>
     </section>
-    <section class="topPageSection topPageSection_features">
-      <div class="topPageSection__parallaxImg"></div>
+    <section class="topPageSection topPageSection_features topPageSection_withImg">
+      <div class="topPageSection__img parallax"></div>
       <div class="topPageSection__description">
         <h2 class="topPageSection__description__title">製品の特徴</h2>
-        <p class="topPageSection__description__EnglishTitle">Product features</p>
+        <p class="topPageSection__description__englishTitle">Product features</p>
         <div class="topPageSection__description__main">
           フル4シーターの4ドアセダン車をメインに据えつつもスポーティーな作りを心掛けているのが特徴である。駆動方式についてもフロントエンジン・リアドライブ方式（FR）の後輪駆動（もしくはFRベースの4WD）にこだわり、最近までBMWブランドでの前輪駆動（FF）車はなかったが、2シリーズアクティブツアラーがBMW初のFF車としてラインナップに加わった。
         </div>
         <a href="" class="topPageSection__description__button">Read More</a>
       </div>
       <div class="topPageSection__scrollButtons">
-        <a href="#" class="scrolly prev">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly prev">
           <span class="fa fa-chevron-up"></span>
         </a>
-        <a href="#" class="scrolly next">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly next">
           <span class="fa fa-chevron-down"></span>
         </a>
       </div>
     </section>
-    <section class="topPageSection topPageSection_motorcycle">
-      <div class="topPageSection__parallaxImg"></div>
+    <section class="topPageSection topPageSection_motorcycle topPageSection_withImg">
+      <div class="topPageSection__img parallax"></div>
       <div class="topPageSection__description">
         <h2 class="topPageSection__description__title">二輪車</h2>
-        <p class="topPageSection__description__EnglishTitle">Motorcycle</p>
+        <p class="topPageSection__description__englishTitle">Motorcycle</p>
         <div class="topPageSection__description__main">
           BMWは第一次世界大戦後にオートバイ用エンジンの生産を始め、続いてオートバイ自体の生産を始めた。同社のオートバイブランドは現在日本では「BMWモトラッド（ドイツ語読みではモトアラート、モトラート）」として知られる。
         </div>
         <a href="" class="topPageSection__description__button">Read More</a>
       </div>
       <div class="topPageSection__scrollButtons">
-        <a href="#" class="scrolly prev">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly prev">
           <span class="fa fa-chevron-up"></span>
         </a>
-        <a href="#" class="scrolly next">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly next">
           <span class="fa fa-chevron-down"></span>
         </a>
       </div>
     </section>
-    <section class="topPageSection topPageSection_motorSports">
-      <div class="topPageSection__parallaxImg"></div>
+    <section class="topPageSection topPageSection_motorSports topPageSection_withImg">
+      <div class="topPageSection__img parallax"></div>
       <div class="topPageSection__description">
         <h2 class="topPageSection__description__title">モータースポーツ</h2>
-        <p class="topPageSection__description__EnglishTitle">Motor sports</p>
+        <p class="topPageSection__description__englishTitle">Motor sports</p>
         <div class="topPageSection__description__main">モータースポーツには古くから比較的積極的な姿勢を見せている。
           特に活動が目立つのがツーリングカーレースで、シュニッツァー・モータースポーツやハーマンモータースポーツなどのセミワークスチームを多数抱え、世界ツーリングカー選手権（WTCC）やニュルブルクリンク24時間レースなどのレースに積極的に参戦している。
         </div>
         <a href="" class="topPageSection__description__button">Read More</a>
       </div>
       <div class="topPageSection__scrollButtons">
-        <a href="#" class="scrolly prev">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly prev">
           <span class="fa fa-chevron-up"></span>
         </a>
-        <a href="#" class="scrolly next">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly next">
           <span class="fa fa-chevron-down"></span>
         </a>
       </div>
     </section>
-    <section class="topPageSection topPageSection_businessConditions">
-      <div class="topPageSection__parallaxImg"></div>
+    <section class="topPageSection topPageSection_businessConditions topPageSection_withImg">
+      <div class="topPageSection__img parallax"></div>
       <div class="topPageSection__description">
         <h2 class="topPageSection__description__title">経営状況</h2>
-        <p class="topPageSection__description__EnglishTitle">Business conditions</p>
+        <p class="topPageSection__description__englishTitle">Business conditions</p>
         <div class="topPageSection__description__main">
           2011年通期の世界市場での販売実績はBMWグループ全体として166万8982台、内訳はBMW138万384台、MINI28万5060台、ロールスロイス3538台、売上高は688億2100万ユーロ（2003年通期の世界市場での販売実績はBMWグループ全体として110万4916台、売上高は415億2500万ユーロ）。
         </div>
         <a href="" class="topPageSection__description__button">Read More</a>
       </div>
       <div class="topPageSection__scrollButtons">
-        <a href="#" class="scrolly prev">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly prev">
           <span class="fa fa-chevron-up"></span>
         </a>
-        <a href="#" class="scrolly next">
+        <a href="#" class="topPageSection__scrollButtons__box scrolly next">
           <span class="fa fa-chevron-down"></span>
         </a>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="snsIcons">
-      <a class="fab fa-twitter" href="#"></a>
-      <a class="fab fa-facebook" href="#"></a>
-      <a class="fab fa-instagram" href="#"></a>
+  <footer class="footer">
+    <div class="footer__snsIcons">
+      <a class="footer__snsIcons__item fab fa-twitter" href="#"></a>
+      <a class="footer__snsIcons__item fab fa-facebook" href="#"></a>
+      <a class="footer__snsIcons__item fab fa-instagram" href="#"></a>
     </div>
-    <p class="copyright"><small>(c) BMW Fan!!!!!.</small></p>
+    <p class="footer__copyright"><small>(c) BMW Fan!!!!!.</small></p>
   </footer>
   <script src="bundle.js"></script>
 </body>

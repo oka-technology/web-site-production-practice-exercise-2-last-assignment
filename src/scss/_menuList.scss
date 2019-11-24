@@ -1,0 +1,46 @@
+.menuList {
+  background-color: #000;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 7rem;
+  transition: opacity 0.3s ease-out;
+  width: 32rem;
+
+  &--active {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+  }
+
+  &__item {
+    border: none;
+    height: 0;
+    margin: 0 auto;
+    transition-delay: 0.3s;
+    width: 25.3rem;
+
+    &--active {
+      border-top: 1px solid #fff;
+      height: 5.7rem;
+      transition-delay: 0s;
+    }
+
+    &__anchor {
+      align-items: center;
+      color: #f2f2f2;
+      cursor: default;
+      display: flex;
+      font-size: 1.6rem;
+      height: 100%;
+      justify-content: flex-start;
+      pointer-events: none;
+      user-select: none;
+
+      &--active {
+        cursor: pointer;
+        pointer-events: all;
+        user-select: text;
+      }
+    }
+  }
+}

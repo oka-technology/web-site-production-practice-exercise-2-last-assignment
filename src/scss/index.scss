@@ -2,4 +2,6 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '../css/html5reset-1.6.1.css',
   '~@fortawesome/fontawesome-free/scss/fontawesome.scss',
   '~@fortawesome/fontawesome-free/scss/brands.scss',
-  '~@fortawesome/fontawesome-free/scss/solid.scss';
+  '~@fortawesome/fontawesome-free/scss/solid.scss', 'variable.scss', 'mixin.scss',
+  'global.scss', 'header.scss', 'menu.scss', 'hamburgerButton.scss', 'menuList.scss',
+  'main.scss', 'topPageSection.scss', 'footer.scss', 'parallax.scss';

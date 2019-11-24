@@ -1,0 +1,28 @@
+.footer {
+  background-color: #333;
+  height: 24rem;
+  padding-top: 7rem;
+  width: 100%;
+
+  &__snsIcons {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+
+    &__item {
+      color: #fff;
+
+      & + & {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &__copyright {
+    color: #fff;
+    font-family: $verdana;
+    font-size: 1.2rem;
+    margin-top: 4.6rem;
+    text-align: center;
+  }
+}
