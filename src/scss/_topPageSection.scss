@@ -174,7 +174,22 @@
       height: 4.7rem;
       justify-content: center;
       margin-top: 4rem;
+      position: relative;
       width: 16rem;
+
+      &:hover {
+        &::before {
+          background: rgba(0, 0, 0, 0.2);
+          bottom: 0;
+          content: '';
+          display: block;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 100;
+        }
+      }
 
       .topPageSection_main & {
         border-color: #f2f2f2;
