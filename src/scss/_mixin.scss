@@ -1,0 +1,15 @@
+@mixin coloringWithHover($r: 0, $g: 0, $b: 0, $a: 0.2) {
+  &:hover {
+    &::before {
+      background: rgba($r, $g, $b, $a);
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 100;
+    }
+  }
+}

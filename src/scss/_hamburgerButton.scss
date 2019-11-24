@@ -1,7 +1,12 @@
 .hamburgerButton {
   left: 2rem;
   position: absolute;
+  transition: left 0.4s ease-out;
   width: 1.5rem;
+
+  &--active {
+    left: 2.2rem;
+  }
 
   &__line {
     background-color: #fff;

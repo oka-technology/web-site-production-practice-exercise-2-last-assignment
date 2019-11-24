@@ -12,6 +12,8 @@
     width: 10.4rem;
     z-index: 9999;
 
+    @include coloringWithHover(255, 255, 255);
+
     &--active {
       border-color: #000;
       width: 6rem;
