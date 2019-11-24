@@ -1,0 +1,15 @@
+.childPage {
+  padding: 6rem 0;
+  width: 96rem;
+
+  &__mainImage {
+    background-position: center;
+    background-size: cover;
+    height: 54rem;
+    width: 100%;
+
+    &_bmw {
+      background-image: url(../images/pic1.jpg);
+    }
+  }
+}
