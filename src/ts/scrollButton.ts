@@ -1,6 +1,7 @@
 import centerPositionOf from './modules/centerPositionOf';
 import debounce from './modules/debounce';
 {
+  const bmwSection = document.querySelector<HTMLElement>('.topPageSection_bmw');
   const imageSection = document.querySelectorAll<HTMLElement>('.topPageSection_withImg');
   const scrollPrevButtons = document.querySelectorAll<HTMLElement>(
     '.topPageSection__scrollButtons__box.prev',
@@ -14,8 +15,9 @@ import debounce from './modules/debounce';
     const sectionPositionArr = sectionArr.map(
       (elem) => centerPositionOf(elem) - window.innerHeight / 2,
     );
+    const start = bmwSection ? centerPositionOf(bmwSection) - window.innerHeight / 2 : 0;
     const end = document.body.clientHeight - window.innerHeight;
-    return [0, ...sectionPositionArr, end];
+    return [start, ...sectionPositionArr, end];
   };
 
   let positionArr = createPositionArr();
