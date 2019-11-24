@@ -2,8 +2,10 @@ import path from 'path';
 import { Configuration } from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
 
+const __DEV__: boolean = process.env.NODE_ENV !== 'production';
+
 export default (): Configuration => ({
-  mode: 'development',
+  mode: __DEV__ ? 'development' : 'production',
   optimization: {
     minimizer: [new TerserPlugin({})],
   },
