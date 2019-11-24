@@ -9,8 +9,8 @@
   "author": "Oka (https://github.com/okatechnology)",
   "license": "ISC",
   "devDependencies": {
-    "@okatechnology/eslint-config": "0.0.5",
-    "@okatechnology/stylelint-config": "0.0.3",
+    "@okatechnology/eslint-config": "0.0.7",
+    "@okatechnology/stylelint-config": "0.0.4",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/webpack": "^4.41.0",
     "css-loader": "^3.2.0",
