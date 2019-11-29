@@ -10,7 +10,8 @@ import debounce from './utils/debounce';
   (() => {
     const PARALLAX_DEGREE = 0.3;
     const parallaxTargetElements = document.querySelectorAll<HTMLElement>('.parallax');
-    if (/iP(hone|(o|a)d)/.test(navigator.userAgent)) {
+
+    if (/Safari/g.test(navigator.userAgent) && document.ontouchstart !== undefined) {
       parallaxTargetElements.forEach((element) => {
         element.classList.remove('parallax');
       });
