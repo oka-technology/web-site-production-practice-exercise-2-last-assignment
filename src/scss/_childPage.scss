@@ -3,11 +3,29 @@
   padding: 6rem 0;
   width: $childPageWidth;
 
+  @include secondLarger {
+    padding: 0;
+    width: 100%;
+  }
+
+  @include thirdLarger {
+    padding: 0;
+    width: 100%;
+  }
+
   &__mainImage {
     background-position: center;
     background-size: cover;
     height: 54rem;
     width: 100%;
+
+    @include secondLarger {
+      height: calc(100vw * 9 / 16);
+    }
+
+    @include thirdLarger {
+      height: calc(100vw * 9 / 16);
+    }
 
     &_bmw {
       background-image: url(../images/pic1.jpg);
@@ -38,26 +56,80 @@
     @extend .topPageSection__description__title;
 
     margin-top: 5rem;
+
+    @include secondLarger {
+      margin: 3.8rem 3.3rem 0;
+      width: auto;
+    }
+
+    @include thirdLarger {
+      margin: 3.8rem 3.3rem 0;
+      width: auto;
+    }
   }
 
   &__englishTitle {
     @extend .topPageSection__description__englishTitle;
 
     color: $gray;
+    margin-top: 3.3rem;
+
+    @include secondLarger {
+      margin: 3.3rem 3.3rem 0;
+      width: auto;
+    }
+
+    @include thirdLarger {
+      margin: 3.3rem 3.3rem 0;
+      width: auto;
+    }
   }
 
   &__description {
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
+    width: 100%;
+
+    @include secondLarger {
+      display: block;
+      margin: 3rem 3.3rem 0;
+      padding: 0 0 5rem;
+      width: auto;
+    }
+
+    @include thirdLarger {
+      display: block;
+      margin: 3rem 3.3rem 0;
+      padding: 0 0 5rem;
+      width: auto;
+    }
 
     &__paragraphBlock {
       font-size: 1.6rem;
       line-height: 2.9rem;
       width: ($childPageWidth - 4rem) / 2;
 
+      @include secondLarger {
+        width: 100%;
+      }
+
+      @include thirdLarger {
+        width: 100%;
+      }
+
       > p:not(:first-child) {
         margin-top: 2.9rem;
+      }
+
+      & + & {
+        @include secondLarger {
+          margin-top: 2.9rem;
+        }
+
+        @include thirdLarger {
+          margin-top: 2.9rem;
+        }
       }
     }
   }

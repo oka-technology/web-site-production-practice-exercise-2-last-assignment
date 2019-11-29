@@ -4,9 +4,14 @@
     background-position: center;
     background-size: cover;
     height: 63rem + ($topPageMainSectionHeight / 2);
+    width: 100%;
 
     @include secondLarger {
       height: 55.8rem;
+    }
+
+    @include thirdLarger {
+      height: 25.4rem;
     }
   }
 
@@ -22,6 +27,11 @@
 
     @include secondLarger {
       height: 50rem;
+      margin-top: 0;
+    }
+
+    @include thirdLarger {
+      height: 29rem;
       margin-top: 0;
     }
   }

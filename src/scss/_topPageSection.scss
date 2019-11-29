@@ -24,14 +24,21 @@
     @include secondLarger {
       background-color: $blue;
     }
+
+    @include thirdLarger {
+      background-color: $blue;
+    }
   }
 
   &_bmw {
     padding: 3.7rem 0;
 
     @include secondLarger {
-      height: 37rem;
-      padding: 5.5rem 0 0;
+      padding: 5.5rem 0 5.1rem;
+    }
+
+    @include thirdLarger {
+      padding: 3.1rem 0 4rem;
     }
   }
 
@@ -43,6 +50,11 @@
 
     @include secondLarger {
       height: 55.8rem;
+      width: 100%;
+    }
+
+    @include thirdLarger {
+      height: 27rem;
       width: 100%;
     }
 
@@ -80,10 +92,19 @@
         margin-top: 0;
       }
 
+      @include thirdLarger {
+        font-size: 2.4rem;
+        margin-top: 0;
+      }
+
       .topPageSection_main & {
         font-family: $verdana;
         font-size: 4rem;
         margin-top: 0;
+
+        @include thirdLarger {
+          font-size: 2.6rem;
+        }
       }
 
       .topPageSection_bmw & {
@@ -92,6 +113,10 @@
         text-align: center;
 
         @include secondLarger {
+          text-align: start;
+        }
+
+        @include thirdLarger {
           text-align: start;
         }
       }
@@ -132,12 +157,21 @@
       text-align: center;
       width: 100%;
 
+      @include thirdLarger {
+        margin-top: 2rem;
+      }
+
       .topPageSection_bmw & {
         color: $gray;
         justify-content: center;
 
         @include secondLarger {
           justify-content: flex-start;
+        }
+
+        @include thirdLarger {
+          justify-content: flex-start;
+          margin-top: 1.1rem;
         }
       }
 
@@ -164,19 +198,34 @@
 
     &__main {
       font-size: 1.4rem;
-      line-height: 1.7rem;
+      line-height: 2.9rem;
       margin: 2.2rem auto 0;
+
+      @include thirdLarger {
+        margin-top: 1.6rem;
+      }
 
       .topPageSection_main & {
         font-size: 2.8rem;
         font-weight: bold;
         margin-top: 4.7rem;
+
+        @include thirdLarger {
+          font-size: 1.8rem;
+          margin-top: 2.6rem;
+        }
       }
 
       .topPageSection_bmw & {
+        line-height: 2.4rem;
         text-align: center;
 
         @include secondLarger {
+          text-align: start;
+        }
+
+        @include thirdLarger {
+          margin: 1.7rem auto 0;
           text-align: start;
         }
       }
@@ -206,6 +255,12 @@
       position: relative;
       width: 16rem;
 
+      @include thirdLarger {
+        height: 4.6rem;
+        margin: 2.5rem 0 0;
+        width: auto;
+      }
+
       @include coloringWithHover;
 
       .topPageSection_main & {
@@ -218,6 +273,12 @@
         margin-right: auto;
         margin-top: 3.2rem;
         width: 18rem;
+
+        @include thirdLarger {
+          height: 4.3rem;
+          margin: 4.9rem 2rem 0;
+          width: auto;
+        }
       }
 
       .topPageSection_bmw & {
@@ -255,18 +316,22 @@
       }
     }
 
-    .topPageSection_bmw & {
-      @include secondLarger {
-        align-items: baseline;
-        margin: 0 6rem;
-        width: auto;
-      }
-    }
-
     .topPageSection_main & {
       position: relative;
       text-align: center;
       z-index: 2;
+    }
+
+    .topPageSection_bmw & {
+      @include secondLarger {
+        margin: 0 6rem;
+        width: auto;
+      }
+
+      @include thirdLarger {
+        margin: 0 2rem;
+        width: auto;
+      }
     }
 
     .topPageSection_withImg & {
@@ -274,8 +339,12 @@
       width: 50%;
 
       @include secondLarger {
-        height: 36.5rem;
-        padding: 5rem 6rem 0;
+        padding: 5rem 6rem;
+        width: 100%;
+      }
+
+      @include thirdLarger {
+        padding: 3rem 2rem 5rem;
         width: 100%;
       }
     }
