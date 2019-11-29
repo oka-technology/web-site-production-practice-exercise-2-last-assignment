@@ -1,4 +1,4 @@
-const offSetTopOf = (elem: HTMLElement): number => {
+const requestOffsetTop = (elem: HTMLElement): number => {
   let offsetTop = 0;
   let target: HTMLElement | null = elem;
   while (target) {
@@ -8,4 +8,4 @@ const offSetTopOf = (elem: HTMLElement): number => {
   return offsetTop;
 };
 
-export default offSetTopOf;
+export default requestOffsetTop;

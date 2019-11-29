@@ -1,4 +1,4 @@
-export default (cb: () => void, timeout: number) => {
+const debounce = (cb: () => void, timeout: number) => {
   let timer: ReturnType<typeof setTimeout> | null = null;
   return () => {
     if (timer !== null) {
@@ -7,3 +7,5 @@ export default (cb: () => void, timeout: number) => {
     timer = setTimeout(cb, timeout);
   };
 };
+
+export default debounce;
