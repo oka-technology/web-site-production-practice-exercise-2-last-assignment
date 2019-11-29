@@ -1,4 +1,4 @@
-import centerPositionOf from './modules/centerPositionOf';
+import requestCenterPosition from './utils/requestCenterPosition';
 {
   const FADEIN_PADDING = 100;
   const fadeinElems = document.querySelectorAll<HTMLElement>('.fadein');
@@ -16,7 +16,7 @@ import centerPositionOf from './modules/centerPositionOf';
     const top = window.scrollY;
     const bottom = window.scrollY + window.innerHeight;
     fadeinElems.forEach((elem) => {
-      const centerPosition = centerPositionOf(elem);
+      const centerPosition = requestCenterPosition(elem);
       if (
         centerPosition > top + FADEIN_PADDING &&
         centerPosition < bottom - FADEIN_PADDING

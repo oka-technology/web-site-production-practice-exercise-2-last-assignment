@@ -1,5 +1,5 @@
-import centerPositionOf from './modules/centerPositionOf';
-import debounce from './modules/debounce';
+import requestCenterPosition from './utils/requestCenterPosition';
+import debounce from './utils/debounce';
 {
   const bmwSection = document.querySelector<HTMLElement>('.topPageSection_bmw');
   const imageSection = document.querySelectorAll<HTMLElement>('.topPageSection_withImg');
@@ -13,13 +13,13 @@ import debounce from './modules/debounce';
     '.topPageSection_main .topPageSection__description__button',
   );
 
-  const scrollPositionOf = (elem: HTMLElement) =>
-    centerPositionOf(elem) - window.innerHeight / 2;
+  const requireScrollPosition = (elem: HTMLElement) =>
+    requestCenterPosition(elem) - window.innerHeight / 2;
 
   const createPositionArr = () => {
     const sectionArr = Array.from(imageSection);
-    const sectionPositionArr = sectionArr.map((elem) => scrollPositionOf(elem));
-    const start = bmwSection ? scrollPositionOf(bmwSection) : 0;
+    const sectionPositionArr = sectionArr.map((elem) => requireScrollPosition(elem));
+    const start = bmwSection ? requireScrollPosition(bmwSection) : 0;
     const end = document.body.clientHeight - window.innerHeight;
     return [start, ...sectionPositionArr, end];
   };
@@ -54,11 +54,11 @@ import debounce from './modules/debounce';
 
   (() => {
     if (!bmwSection) return;
-    let firstImgSectionPosition = scrollPositionOf(bmwSection);
+    let firstImgSectionPosition = requireScrollPosition(bmwSection);
     window.addEventListener(
       'resize',
       debounce(() => {
-        firstImgSectionPosition = scrollPositionOf(bmwSection);
+        firstImgSectionPosition = requireScrollPosition(bmwSection);
       }, 100),
     );
     continueButton?.addEventListener('click', (e) => {
