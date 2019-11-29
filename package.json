@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack",
+    "serve:dev": "webpack-dev-server --watch-content-base --inline",
     "build:production": "NODE_ENV=production webpack"
   },
   "author": "Oka (https://github.com/okatechnology)",
@@ -27,7 +28,8 @@
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2"
