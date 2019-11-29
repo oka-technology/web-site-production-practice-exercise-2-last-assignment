@@ -4,7 +4,7 @@
   transition: left 0.4s ease-out;
   width: 1.5rem;
 
-  &--active {
+  .menu__button--active & {
     left: 2.2rem;
   }
 
@@ -20,7 +20,7 @@
       margin-top: 0.3rem;
     }
 
-    &--active {
+    .menu__button--active & {
       width: 0.7rem;
 
       &:nth-child(1) {
