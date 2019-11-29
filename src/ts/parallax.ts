@@ -1,31 +1,61 @@
-import centerPositionOf from './modules/centerPositionOf';
+import requestCenterPosition from './utils/requestCenterPosition';
+import debounce from './utils/debounce';
 {
-  const PARALLAX_DEGREE = 0.3;
-  const parallaxElems = document.querySelectorAll<HTMLElement>('.parallax');
-  let shouldUpdate = true;
-  const currLengthArr = Array.from<number>({ length: parallaxElems.length });
+  interface ElementInfo {
+    element: HTMLElement;
+    shiftLength: number;
+    centerPosition: number;
+  }
 
-  const updateBgPosition = () => {
-    shouldUpdate = true;
-    const currPosition = window.scrollY + window.innerHeight / 2;
-    parallaxElems.forEach((elem, i) => {
-      const shiftLength: number =
-        (centerPositionOf(elem) - currPosition) * PARALLAX_DEGREE;
-      currLengthArr[i] = shiftLength;
-    });
-  };
-
-  const update = () => {
-    if (shouldUpdate) {
-      parallaxElems.forEach((elem, i) => {
-        elem.style.backgroundPosition = `center ${currLengthArr[i]}px`;
+  (() => {
+    const PARALLAX_DEGREE = 0.3;
+    const parallaxTargetElements = document.querySelectorAll<HTMLElement>('.parallax');
+    if (/iP(hone|(o|a)d)/.test(navigator.userAgent)) {
+      parallaxTargetElements.forEach((element) => {
+        element.classList.remove('parallax');
       });
-      shouldUpdate = false;
+      return;
     }
-    requestAnimationFrame(update);
-  };
 
-  updateBgPosition();
-  requestAnimationFrame(update);
-  window.addEventListener('scroll', updateBgPosition);
+    const elementInfoList = Array.from<HTMLElement, ElementInfo>(
+      parallaxTargetElements,
+      (element) => ({
+        element,
+        shiftLength: 0,
+        centerPosition: requestCenterPosition(element),
+      }),
+    );
+    let shouldUpdate = true;
+
+    const updateShiftLength = () => {
+      shouldUpdate = true;
+      const currCenterPosition = window.scrollY + window.innerHeight / 2;
+      elementInfoList.forEach((elementInfo) => {
+        elementInfo.shiftLength =
+          (elementInfo.centerPosition - currCenterPosition) * PARALLAX_DEGREE;
+      });
+    };
+    updateShiftLength();
+    window.addEventListener('scroll', updateShiftLength);
+    window.addEventListener('resize', debounce(updateShiftLength, 200));
+
+    const updateCenterPosition = () => {
+      shouldUpdate = true;
+      elementInfoList.forEach((elementInfo) => {
+        elementInfo.centerPosition = requestCenterPosition(elementInfo.element);
+      });
+    };
+    window.addEventListener('resize', debounce(updateCenterPosition, 100));
+
+    const update = () => {
+      if (shouldUpdate) {
+        elementInfoList.forEach((elementInfo) => {
+          elementInfo.element.style.backgroundPosition = `center ${elementInfo.shiftLength}px`;
+        });
+        shouldUpdate = false;
+      }
+      requestAnimationFrame(update);
+    };
+    update();
+  })();
 }
