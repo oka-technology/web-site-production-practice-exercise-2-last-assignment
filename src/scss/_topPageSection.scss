@@ -7,21 +7,32 @@
     justify-content: center;
     z-index: 1;
 
-    &::before {
+    @include firstLarger {
+      &::before {
+        background-color: $blue;
+        content: ('');
+        display: block;
+        height: $topPageMainSectionHeight;
+        position: absolute;
+        top: calc(100vw * #{$tanOfTopPageMainSectionInclination} / 2);
+        transform: skewY($topPageMainSectionInclination);
+        width: 100%;
+        z-index: 1;
+      }
+    }
+
+    @include secondLarger {
       background-color: $blue;
-      content: ('');
-      display: block;
-      height: $topPageMainSectionHeight;
-      position: absolute;
-      top: calc(100vw * #{$tanOfTopPageMainSectionInclination} / 2);
-      transform: skewY($topPageMainSectionInclination);
-      width: 100%;
-      z-index: 1;
     }
   }
 
   &_bmw {
     padding: 3.7rem 0;
+
+    @include secondLarger {
+      height: 37rem;
+      padding: 5.5rem 0 0;
+    }
   }
 
   &__img {
@@ -29,6 +40,11 @@
     background-size: cover;
     height: 100%;
     width: 50%;
+
+    @include secondLarger {
+      height: 55.8rem;
+      width: 100%;
+    }
 
     .topPageSection_emblem & {
       background-image: url(../images/pic2.jpg);
@@ -52,25 +68,32 @@
   }
 
   &__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin: 0 auto;
     width: 52rem;
 
     &__title {
       font-size: 3.6rem;
       font-weight: bold;
-      margin-top: 0;
+      margin-top: 18.4rem;
+
+      @include secondLarger {
+        margin-top: 0;
+      }
 
       .topPageSection_main & {
         font-family: $verdana;
         font-size: 4rem;
+        margin-top: 0;
       }
 
       .topPageSection_bmw & {
         color: $green;
+        margin-top: 0;
         text-align: center;
+
+        @include secondLarger {
+          text-align: start;
+        }
       }
 
       .topPageSection_emblem & {
@@ -112,7 +135,10 @@
       .topPageSection_bmw & {
         color: $gray;
         justify-content: center;
-        width: 52rem;
+
+        @include secondLarger {
+          justify-content: flex-start;
+        }
       }
 
       .topPageSection_emblem & {
@@ -149,7 +175,10 @@
 
       .topPageSection_bmw & {
         text-align: center;
-        width: 52rem;
+
+        @include secondLarger {
+          text-align: start;
+        }
       }
 
       .topPageSection_emblem & {
@@ -197,6 +226,10 @@
         color: $green;
         margin-left: auto;
         margin-right: auto;
+
+        @include secondLarger {
+          margin-left: 0;
+        }
       }
 
       .topPageSection_emblem & {
@@ -222,6 +255,14 @@
       }
     }
 
+    .topPageSection_bmw & {
+      @include secondLarger {
+        align-items: baseline;
+        margin: 0 6rem;
+        width: auto;
+      }
+    }
+
     .topPageSection_main & {
       position: relative;
       text-align: center;
@@ -231,6 +272,12 @@
     .topPageSection_withImg & {
       padding: 0 6rem;
       width: 50%;
+
+      @include secondLarger {
+        height: 36.5rem;
+        padding: 5rem 6rem 0;
+        width: 100%;
+      }
     }
 
     .topPageSection_emblem & {
@@ -256,10 +303,16 @@
 
   &__scrollButtons {
     bottom: 2rem;
-    display: flex;
-    flex-direction: column;
     position: absolute;
     right: 1.4rem;
+
+    @include secondLarger {
+      display: none;
+    }
+
+    @include thirdLarger {
+      display: none;
+    }
 
     &__box {
       align-items: center;
@@ -299,35 +352,42 @@
   }
 
   &_withImg {
-    display: flex;
-    height: 68rem;
-    margin-top: 6.3rem;
     position: relative;
 
-    &:nth-child(odd) {
-      flex-direction: row-reverse;
+    @include firstLarger {
+      display: flex;
+      height: 68rem;
+      margin-top: 6.3rem;
 
-      .topPageSection__description {
-        align-items: flex-end;
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        .topPageSection__description {
+          align-items: flex-end;
+        }
+
+        .topPageSection__description__englishTitle {
+          justify-content: flex-end;
+        }
+
+        .topPageSection__description__main {
+          margin: 2.2rem 0 0 auto;
+        }
+
+        .topPageSection__scrollButtons {
+          left: 1.4rem;
+        }
       }
 
-      .topPageSection__description__englishTitle {
-        justify-content: flex-end;
-      }
-
-      .topPageSection__description__main {
-        margin: 2.2rem 0 0 auto;
-      }
-
-      .topPageSection__scrollButtons {
-        left: 1.4rem;
+      &:nth-child(even) {
+        .topPageSection__description__main {
+          margin: 2.2rem auto 0 0;
+        }
       }
     }
 
-    &:nth-child(even) {
-      .topPageSection__description__main {
-        margin: 2.2rem auto 0 0;
-      }
+    @include secondLarger {
+      margin-top: 0;
     }
 
     & + & {

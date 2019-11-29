@@ -4,6 +4,10 @@
     background-position: center;
     background-size: cover;
     height: 63rem + ($topPageMainSectionHeight / 2);
+
+    @include secondLarger {
+      height: 55.8rem;
+    }
   }
 
   &__mainSectionWrapper {
@@ -15,5 +19,10 @@
         -1
     );
     position: relative;
+
+    @include secondLarger {
+      height: 50rem;
+      margin-top: 0;
+    }
   }
 }

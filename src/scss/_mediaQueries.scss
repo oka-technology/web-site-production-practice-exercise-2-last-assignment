@@ -1,0 +1,17 @@
+@mixin firstLarger {
+  @media screen and (min-width: $breakpointFirst + 1) {
+    @content;
+  }
+}
+
+@mixin secondLarger {
+  @media screen and (max-width: $breakpointFirst) and (min-width: $breakpointSecond + 1) {
+    @content;
+  }
+}
+
+@mixin thirdLarger {
+  @media screen and (max-width: $breakpointSecond) {
+    @content;
+  }
+}
