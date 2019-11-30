@@ -11,12 +11,12 @@ import debounce from './utils/debounce';
     const PARALLAX_DEGREE = 0.3;
     const parallaxTargetElements = document.querySelectorAll<HTMLElement>('.parallax');
 
-    if (/Safari/g.test(navigator.userAgent) && document.ontouchstart !== undefined) {
-      parallaxTargetElements.forEach((element) => {
-        element.classList.remove('parallax');
-      });
-      return;
-    }
+    // if (/Safari/g.test(navigator.userAgent) && document.ontouchstart !== undefined) {
+    //   parallaxTargetElements.forEach((element) => {
+    //     element.classList.remove('parallax');
+    //   });
+    //   return;
+    // }
 
     const elementInfoList = Array.from<HTMLElement, ElementInfo>(
       parallaxTargetElements,
@@ -38,7 +38,6 @@ import debounce from './utils/debounce';
     };
     updateShiftLength();
     window.addEventListener('scroll', updateShiftLength);
-    window.addEventListener('resize', debounce(updateShiftLength, 200));
 
     const updateCenterPosition = () => {
       shouldUpdate = true;
@@ -46,7 +45,13 @@ import debounce from './utils/debounce';
         elementInfo.centerPosition = requestCenterPosition(elementInfo.element);
       });
     };
-    window.addEventListener('resize', debounce(updateCenterPosition, 100));
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        updateCenterPosition();
+        updateShiftLength();
+      }, 100),
+    );
 
     const update = () => {
       if (shouldUpdate) {
