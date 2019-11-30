@@ -11,12 +11,12 @@ import debounce from './utils/debounce';
     const PARALLAX_DEGREE = 0.3;
     const parallaxTargetElements = document.querySelectorAll<HTMLElement>('.parallax');
 
-    // if (/Safari/g.test(navigator.userAgent) && document.ontouchstart !== undefined) {
-    //   parallaxTargetElements.forEach((element) => {
-    //     element.classList.remove('parallax');
-    //   });
-    //   return;
-    // }
+    if (/Safari/g.test(navigator.userAgent) && document.ontouchstart !== undefined) {
+      parallaxTargetElements.forEach((element) => {
+        element.classList.remove('parallax');
+      });
+      return;
+    }
 
     const elementInfoList = Array.from<HTMLElement, ElementInfo>(
       parallaxTargetElements,
