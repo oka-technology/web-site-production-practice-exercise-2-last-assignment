@@ -2,7 +2,7 @@ import requestCenterPosition from './utils/requestCenterPosition';
 import debounce from './utils/debounce';
 {
   const bmwSection = document.querySelector<HTMLElement>('.topPageSection_bmw');
-  const imageSection = document.querySelectorAll<HTMLElement>('.topPageSection_withImg');
+  const imageSections = document.querySelectorAll<HTMLElement>('.topPageSection_withImg');
   const scrollPrevButtons = document.querySelectorAll<HTMLElement>(
     '.topPageSection__scrollButtons__box.prev',
   );
@@ -13,15 +13,17 @@ import debounce from './utils/debounce';
     '.topPageSection_main .topPageSection__description__button',
   );
 
-  const requireScrollPosition = (elem: HTMLElement) =>
+  const requestScrollPosition = (elem: HTMLElement) =>
     requestCenterPosition(elem) - window.innerHeight / 2;
 
   const createPositionArr = () => {
-    const sectionArr = Array.from(imageSection);
-    const sectionPositionArr = sectionArr.map((elem) => requireScrollPosition(elem));
-    const start = bmwSection ? requireScrollPosition(bmwSection) : 0;
+    const imageSectionList = Array.from(imageSections);
+    const sectionPositionList = imageSectionList.map((elem) =>
+      requestScrollPosition(elem),
+    );
+    const start = bmwSection ? requestScrollPosition(bmwSection) : 0;
     const end = document.body.clientHeight - window.innerHeight;
-    return [start, ...sectionPositionArr, end];
+    return [start, ...sectionPositionList, end];
   };
 
   let positionArr = createPositionArr();
@@ -54,11 +56,11 @@ import debounce from './utils/debounce';
 
   (() => {
     if (!bmwSection) return;
-    let firstImgSectionPosition = requireScrollPosition(bmwSection);
+    let firstImgSectionPosition = requestScrollPosition(bmwSection);
     window.addEventListener(
       'resize',
       debounce(() => {
-        firstImgSectionPosition = requireScrollPosition(bmwSection);
+        firstImgSectionPosition = requestScrollPosition(bmwSection);
       }, 100),
     );
     continueButton?.addEventListener('click', (e) => {
